@@ -13,6 +13,7 @@ class ProductType(DjangoObjectType):
 
 
 class Query(object):
+    """Queries for ProductType"""
     product = graphene.Field(ProductType, title=graphene.String())
     all_products = graphene.List(ProductType, in_stock=graphene.Boolean())
 
@@ -94,6 +95,6 @@ class PurchaseProduct(graphene.Mutation):
 
 
 class Mutation(graphene.ObjectType):
-    """A class for listing our mutations"""
+    """A class for listing the mutations"""
     create_product = CreateProduct.Field()
     purchase_product = PurchaseProduct.Field()
