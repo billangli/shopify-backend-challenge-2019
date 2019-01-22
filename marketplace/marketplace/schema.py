@@ -7,4 +7,10 @@ class Query(products.schema.Query, graphene.ObjectType):
     """Inherit queries from all apps"""
     pass
 
-schema = graphene.Schema(query=Query)
+
+class Mutation(products.schema.Mutation, graphene.ObjectType):
+    """Inherit mutations from all apps"""
+    pass
+
+
+schema = graphene.Schema(query=Query, mutation=Mutation)
